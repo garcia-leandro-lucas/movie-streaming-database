@@ -10,7 +10,7 @@ CREATE TABLE movie_genre (
 );
 
 -- Table: id_classification_information
-CREATE TABLE id_classification_information(
+CREATE TABLE classification_information(
     id_classification_information INT NOT NULL AUTO_INCREMENT,
     mda_classification_information VARCHAR(15) NOT NULL ,
     id_classification_information_description VARCHAR(50) NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE customer (
     last_name VARCHAR(50) NOT NULL,
     dni INT NOT NULL,
     email VARCHAR(50) NOT NULL,
-    id_gender_user VARCHAR(50) NOT NULL,
+    id_gender_user INT NOT NULL,
     id_user INT NOT NULL,
     id_country INT NOT NULL,
     id_province INT NOT NULL,
@@ -151,7 +151,7 @@ CREATE TABLE movie (
 	id_movie INT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(50) NOT NULL,
 	description VARCHAR(255) NOT NULL,
-    popularity INT NOT NULL DEFAULT 0,
+    popularity FLOAT NOT NULL DEFAULT 0,
 	director VARCHAR(50) NOT NULL,
 	duration_time TIME NOT NULL,
     release_date DATE NOT NULL,
