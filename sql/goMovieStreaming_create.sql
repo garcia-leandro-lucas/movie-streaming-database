@@ -13,7 +13,7 @@ CREATE TABLE movie_genre (
 CREATE TABLE classification_information(
     id_classification_information INT NOT NULL AUTO_INCREMENT,
     mda_classification_information VARCHAR(15) NOT NULL ,
-    id_classification_information_description VARCHAR(50) NOT NULL,
+    id_classification_information_description VARCHAR(255) NOT NULL,
     PRIMARY KEY(id_classification_information)
 );
 
@@ -27,6 +27,8 @@ CREATE TABLE language (
 -- Table: movie_favorite_list
 CREATE TABLE movie_favorite_list (
 	id_favorite_list INT NOT NULL AUTO_INCREMENT,
+    id_restriction_profile INT DEFAULT 0,
+    id_user INT NOT NULL,
 	name_favorite_list VARCHAR(50) NOT NULL,
     PRIMARY KEY(id_favorite_list)
 );
@@ -35,7 +37,7 @@ CREATE TABLE movie_favorite_list (
 CREATE TABLE restriction_profile(
     id_restriction_profile INT NOT NULL AUTO_INCREMENT,
     iso_restriction_profile VARCHAR(2) NOT NULL,
-    restriction_profile_description VARCHAR(50) NOT NULL,
+    restriction_profile_description VARCHAR(255) NOT NULL,
     PRIMARY KEY(id_restriction_profile)
 );
 
@@ -70,15 +72,15 @@ CREATE TABLE media_universe(
 -- Table: country
 CREATE TABLE country (
 	id_country INT NOT NULL AUTO_INCREMENT,
-    iso_country_name VARCHAR(2) NOT NULL,
-	country_name INT NOT NULL,
+    iso_country_name VARCHAR(15) NOT NULL,
+	country_name VARCHAR(255) NOT NULL,
     PRIMARY KEY(id_country)
 );
 
 -- Table: gender_user
 CREATE TABLE gender_user (
 	id_gender_user INT NOT NULL AUTO_INCREMENT,
-    gender_user_description VARCHAR(2) NOT NULL,
+    gender_user_description VARCHAR(30) NOT NULL,
     PRIMARY KEY(id_gender_user)
 );
 
@@ -131,7 +133,7 @@ CREATE TABLE customer (
     id_customer INT NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    dni INT NOT NULL,
+    dni VARCHAR(20) NOT NULL,
     email VARCHAR(50) NOT NULL,
     id_gender_user INT NOT NULL,
     id_user INT NOT NULL,
@@ -150,7 +152,7 @@ CREATE TABLE customer (
 CREATE TABLE movie (
 	id_movie INT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(50) NOT NULL,
-	description VARCHAR(255) NOT NULL,
+	description VARCHAR(1000) NOT NULL,
     popularity FLOAT NOT NULL DEFAULT 0,
 	director VARCHAR(50) NOT NULL,
 	duration_time TIME NOT NULL,
@@ -164,6 +166,7 @@ CREATE TABLE movie (
     id_format_type INT NOT NULL,
     id_media_universe INT NOT NULL,
     id_streaming_platform INT NOT NULL,
+    id_commentary INT,
     PRIMARY KEY(id_movie),
     FOREIGN KEY(id_classification_information) REFERENCES classification_information(id_classification_information),
     FOREIGN KEY(id_movie_rating) REFERENCES movie_rating(id_movie_rating),
@@ -172,4 +175,16 @@ CREATE TABLE movie (
     FOREIGN KEY(id_format_type) REFERENCES format_type(id_format_type),
     FOREIGN KEY(id_media_universe) REFERENCES media_universe(id_media_universe),
     FOREIGN KEY(id_streaming_platform) REFERENCES streaming_platform(id_streaming_platform)
+);
+
+-- Table: commentary
+CREATE TABLE commentary (
+	id_commentary INT NOT NULL AUTO_INCREMENT,
+	id_movie INT NOT NULL,
+    id_user INT NOT NULL,
+    commentary VARCHAR(255),
+    commentary_date DATE NOT NULL,
+    PRIMARY KEY(id_commentary),
+    FOREIGN KEY(id_movie) REFERENCES movie(id_movie),
+    FOREIGN KEY(id_user) REFERENCES user(id_user)
 );

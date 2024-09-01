@@ -1,11 +1,7 @@
 USE goMovieStreaming;
 
-/* CREATE TABLE movie_genre (
-	id_movie_genre INT NOT NULL AUTO_INCREMENT,
-	genres_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_movie_genre)
-); */
 
+-- Insert table: movie_genre
 INSERT INTO movie_genre (id_movie_genre, genres_name ) VALUES
 (1,"Action"),
 (2,"Adventure"),
@@ -28,24 +24,16 @@ INSERT INTO movie_genre (id_movie_genre, genres_name ) VALUES
 (19,"Western");
 
 
-/* CREATE TABLE id_classification_information(
-    id_classification_information INT NOT NULL AUTO_INCREMENT,
-    id_classification_information_description VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_classification_information)
-); */
-INSERT INTO id_classification_information (id_classification_information, mda_classification_information, id_classification_information_description ) VALUES
+-- Insert table: id_classification_information
+INSERT INTO classification_information (id_classification_information, mda_classification_information, id_classification_information_description ) VALUES
 (1,"G", "Para todos los públicos."),
 (2,"PG", "Con supervisión de los padres."),
 (3,"PG13", "Con supervisión de los padres para menores de 13 años."),
 (4,"NC16", "Para mayores de 16 años."),
 (5,"M18", "Para mayores de 18 años.");
 
-/* CREATE TABLE language (
-	id_language INT NOT NULL AUTO_INCREMENT,
-	language_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_language)
-); */
 
+-- Insert table: language
 INSERT INTO language (id_language, language_name) VALUES
 (1, "Chinese"),
 (2, "Portuguese"),
@@ -148,34 +136,40 @@ INSERT INTO language (id_language, language_name) VALUES
 (99, "Oriya"),
 (100, "Spanish");
 
-/* CREATE TABLE movie_favorite_list (
-	id_favorite_list INT NOT NULL AUTO_INCREMENT,
-	name_favorite_list VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_favorite_list)
-); */
 
-INSERT INTO movie_favorite_list (id_favorite_list, name_favorite_list) VALUES
-(1, "");
+-- Insert table: movie_favorite_list
+INSERT INTO movie_favorite_list (id_favorite_list, id_restriction_profile, id_user, name_favorite_list) VALUES
+(1, 1, 1,"Jarad"),
+(2, 2, 1,"Rurik"),
+(3, 3, 1,"Torrance"),
+(4, 4, 1,"Rafaello"),
+(5, 2, 1,"Rayner"),
+(6, 3, 1,"Jean"),
+(7, 2, 1,"Alex"),
+(8, 1, 1,"Pietro"),
+(9, 2, 1,"Weidar"),
+(10, 3, 1,"Sly"),
+(11, 4, 1,"Jackie"),
+(12, 1, 1,"Amory"),
+(13, 1, 1,"Haroun"),
+(14, 2, 1,"Eldon"),
+(15, 4, 1,"Paten"),
+(16, 4, 1,"Iggy"),
+(17, 3, 1,"Lockwood"),
+(18, 2, 1,"Andrey"),
+(19, 1, 1,"Niles"),
+(20, 3, 1,"Keane");
 
-/* CREATE TABLE restriction_profile(
-    id_restriction_profile INT NOT NULL AUTO_INCREMENT,
-     iso_restriction_profile VARCHAR(2) NOT NULL,
-    restriction_profile_description VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_restriction_profile)
-); */
 
+-- Insert table: restriction_profile
 INSERT INTO restriction_profile (id_restriction_profile, iso_restriction_profile, restriction_profile_description) VALUES
-(1,"AL","El contenido está diseñado para los espectadores más jóvenes.");
-(2,"6","El contenido puede incluir fantasía leve o violencia cómica. Contiene poco o nada de lenguaje fuerte o contenido sexual.");
-(3,"9","El contenido puede incluir lenguaje suave, diálogos sugerentes, situaciones sexuales y/o violencia moderada.");
+(1,"AL","El contenido está diseñado para los espectadores más jóvenes."),
+(2,"6","El contenido puede incluir fantasía leve o violencia cómica. Contiene poco o nada de lenguaje fuerte o contenido sexual."),
+(3,"9","El contenido puede incluir lenguaje suave, diálogos sugerentes, situaciones sexuales y/o violencia moderada."),
 (4,"12","El contenido puede incluir lenguaje grosero, diálogos sugerentes, situaciones sexuales y/o violencia intensa.");
 
-/* CREATE TABLE streaming_platform (
-    id_streaming_platform INT NOT NULL AUTO_INCREMENT,
-    streaming_platform_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_streaming_platform)
-); */
 
+-- Insert table: streaming_platform
 INSERT INTO streaming_platform (id_streaming_platform, streaming_platform_name) VALUES
 (1, "Netflix"),
 (2, "HBO"),
@@ -184,12 +178,8 @@ INSERT INTO streaming_platform (id_streaming_platform, streaming_platform_name) 
 (5, "Paramount+"),
 (6, "Apple");
 
-/* CREATE TABLE movie_rating (
-    id_movie_rating INT NOT NULL AUTO_INCREMENT,
-    name_movie_rating VARCHAR(15) NOT NULL,
-    PRIMARY KEY(id_movie_rating)
-); */
 
+-- Insert table: movie_rating
 INSERT INTO movie_rating (id_movie_rating, name_movie_rating) VALUES
 (1, "1 estrella"),
 (2, "2 estrella"),
@@ -197,12 +187,8 @@ INSERT INTO movie_rating (id_movie_rating, name_movie_rating) VALUES
 (4, "4 estrella"),
 (5, "5 estrella");
 
-/* CREATE TABLE format_type(
-    id_format_type INT NOT NULL AUTO_INCREMENT,
-    name_format_type VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_format_type)
-); */
 
+-- Insert table: format_type
 INSERT INTO format_type (id_format_type, name_format_type) VALUES
 (1, "Pelicula"),
 (2, "Serie"),
@@ -210,12 +196,8 @@ INSERT INTO format_type (id_format_type, name_format_type) VALUES
 (4, "Largometraje"),
 (5, "Miniserie");
 
-/* CREATE TABLE media_universe(
-    id_media_universe INT NOT NULL AUTO_INCREMENT,
-    name_media_universe VARCHAR(50),
-    PRIMARY KEY(id_media_universe)
-); */
 
+-- Insert table: media_universe
 INSERT INTO media_universe (id_media_universe, name_media_universe) VALUES
 (1, "Disney"),
 (2, "Pixar"),
@@ -234,13 +216,7 @@ INSERT INTO media_universe (id_media_universe, name_media_universe) VALUES
 (15, "Adult Swim");
 
 
-/* CREATE TABLE country (
-	id_country INT NOT NULL AUTO_INCREMENT,
-    iso_country_name VARCHAR(2) NOT NULL,
-	country_name INT NOT NULL,
-    PRIMARY KEY(id_country)
-);*/
-
+-- Insert table: country
 INSERT INTO country (id_country, iso_country_name, country_name) VALUES
 (1, "AF", "Afganistán"),
 (2, "AX", "Islas Gland"),
@@ -484,27 +460,16 @@ INSERT INTO country (id_country, iso_country_name, country_name) VALUES
 (240, "ZW", "Zimbabue");
 
 
-/* CREATE TABLE gender_user (
-	id_gender_user INT NOT NULL AUTO_INCREMENT,
-    gender_user_description VARCHAR(2) NOT NULL,
-    PRIMARY KEY(id_gender_user)
-); */
+-- Insert table: gender_user
 INSERT INTO gender_user (id_gender_user, gender_user_description) VALUES
 (1, "Bigender"),
 (2, "Female"),
 (3, "Male"),
 (4, "Non-binary");
 
-/*
-CREATE TABLE province (
-	id_province INT NOT NULL AUTO_INCREMENT,
-	province_name VARCHAR(50) NOT NULL,
-	id_country INT NOT NULL,
-    PRIMARY KEY(id_province),
-    FOREIGN KEY (id_country) REFERENCES country(id_country)
-);*/
 
-INSERT INTO province (id_country, province_name, id_country) VALUES
+-- Insert table: province
+INSERT INTO province (id_province, province_name, id_country) VALUES
 (1, "Buenos Aires",13),
 (2, "Buenos Aires-GBA",13),
 (3, "Capital Federal",13),
@@ -540,16 +505,12 @@ INSERT INTO province (id_country, province_name, id_country) VALUES
 (33,"Chañaral",46),
 (34,"Copiapó",46),
 (35,"Montevideo",229),
-(35,"Maldonado",229),
-(35,"Salto",229),
-(35,"Ciudad de la Costa",229);
+(36,"Maldonado",229),
+(37,"Salto",229),
+(38,"Ciudad de la Costa",229);
 
 
-/* CREATE TABLE type_of_plan (
-	id_type_of_plan INT NOT NULL AUTO_INCREMENT,
-	type_of_plan_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_type_of_plan)
-); */
+-- Insert table: type_of_plan
 INSERT INTO type_of_plan (id_type_of_plan, type_of_plan_name) VALUES
 (1, "Free"),
 (2, "Essential"),
@@ -557,13 +518,7 @@ INSERT INTO type_of_plan (id_type_of_plan, type_of_plan_name) VALUES
 (4, "Premium");
 
 
-/* CREATE TABLE subscription (
-	id_subscription INT NOT NULL AUTO_INCREMENT,
-	id_type_of_plan INT NOT NULL,
-    PRIMARY KEY(id_subscription),
-    FOREIGN KEY (id_type_of_plan) REFERENCES type_of_plan(id_type_of_plan)
-); */
-
+-- Insert table: subscription
 INSERT INTO subscription (id_subscription, id_type_of_plan) VALUES
 (1, 1),
 (2, 2),
@@ -571,45 +526,31 @@ INSERT INTO subscription (id_subscription, id_type_of_plan) VALUES
 (4, 4);
 
 
-/* CREATE TABLE profile (
-	id_profile INT NOT NULL AUTO_INCREMENT,
-	profile_name VARCHAR(50) NOT NULL,
-    id_favorite_list INT NOT NULL,
-    id_restriction_profile INT NOT NULL,
-    PRIMARY KEY(id_profile),
-    FOREIGN KEY(id_favorite_list) REFERENCES movie_favorite_list(id_favorite_list),
-    FOREIGN KEY(id_restriction_profile) REFERENCES restriction_profile(id_restriction_profile)
-); */
+-- Insert table: profile
 INSERT INTO profile (id_profile, profile_name, id_favorite_list, id_restriction_profile) VALUES
-(1, "lhoulridge0", 1, 1);
-(2, "sminster1", 2, 2);
-(3, "ajezard2", 3, 3);
-(4, "hhanning3", 4, 4);
-(5, "tdupree4", 5, 1);
-(6, "sdegg5", 6, 2);
-(7, "aliffe6", 7, 3);
-(8, "dshoesmith7", 8, 4);
-(9, "vgillanders8", 9, 1);
-(10, "fgodsell9", 10, 2);
-(11, "awardsa", 11, 3);
-(12, "ikorfb", 12, 4);
-(13, "adoutchc", 13, 1);
-(14, "lwittked", 14, 2);
-(15, "cvescovinie", 15, 3);
-(16, "mocoskerryf", 16, 4);
-(17, "hdoubleg", 17, 1);
-(18, "ecleeverh", 18, 2);
-(19, "adinegesi", 19, 3);
+(1, "lhoulridge0", 1, 1),
+(2, "sminster1", 2, 2),
+(3, "ajezard2", 3, 3),
+(4, "hhanning3", 4, 4),
+(5, "tdupree4", 5, 1),
+(6, "sdegg5", 6, 2),
+(7, "aliffe6", 7, 3),
+(8, "dshoesmith7", 8, 4),
+(9, "vgillanders8", 9, 1),
+(10, "fgodsell9", 10, 2),
+(11, "awardsa", 11, 3),
+(12, "ikorfb", 12, 4),
+(13, "adoutchc", 13, 1),
+(14, "lwittked", 14, 2),
+(15, "cvescovinie", 15, 3),
+(16, "mocoskerryf", 16, 4),
+(17, "hdoubleg", 17, 1),
+(18, "ecleeverh", 18, 2),
+(19, "adinegesi", 19, 3),
 (20, "nlauxj", 20, 4);
 
 
-/* CREATE TABLE user (
-    id_user INT NOT NULL AUTO_INCREMENT,
-    user_name VARCHAR(50) NOT NULL,
-    id_profile INT NOT NULL,
-    PRIMARY KEY(id_user),
-    FOREIGN KEY(id_profile) REFERENCES profile(id_profile)
-); */
+-- Insert table: user
 INSERT INTO user (id_user, user_name, id_profile) VALUES
 (1, "wdelacote0", 1),
 (2, "vheffron1", 2),
@@ -632,116 +573,96 @@ INSERT INTO user (id_user, user_name, id_profile) VALUES
 (19, "tstandelli", 19),
 (20, "lbasterfieldj", 20);
 
-/* CREATE TABLE customer (
-    id_customer INT NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    dni INT NOT NULL,
-    email VARCHAR(50) NOT NULL,
-    id_gender_user VARCHAR(50) NOT NULL,
-    id_user INT NOT NULL,
-    id_country INT NOT NULL,
-    id_province INT NOT NULL,
-    id_subscription INT NOT NULL,
-    PRIMARY KEY(id_customer),
-    FOREIGN KEY(id_gender_user) REFERENCES gender_user(id_gender_user),
-    FOREIGN KEY(id_user) REFERENCES user(id_user),
-    FOREIGN KEY(id_country) REFERENCES country(id_country),
-    FOREIGN KEY(id_province) REFERENCES province(id_province),
-    FOREIGN KEY(id_subscription) REFERENCES subscription(id_subscription)
-); */
 
+-- Insert table: customer
 INSERT INTO customer (id_customer, first_name, last_name, dni, email, id_gender_user, id_user, id_country, id_province, id_subscription) VALUES
-(1, "Chadwick", "Brandacci", "82-4336045", "cbrandacci0@is.gd", 3, 1, 13, 1, 1);
-(2, "Jamill", "Aleshintsev", "00-8680047", "jaleshintsev1@epa.gov", 3, 2, 13, 2, 2);
-(3, "Rolando", "Cursons", "44-8986972", "rcursons2@harvard.edu", 3, 3, 13, 3, 3);
-(4, "Kamila", "Manvell", "17-5678386", "kmanvell3@elpais.com", 2, 4, 13, 4, 4);
-(5, "Edgar", "O""Farris", "44-6655474", "eofarris4@tiny.cc", 3, 5, 13, 5, 1);
-(6, "Rochester", "Burkin", "69-6348627", "rburkin5@buzzfeed.com", 3, 6, 13, 6, 2);
-(7, "Merell", "Abbie", "93-8711197", "mabbie6@unc.edu", 1, 7, 13, 7, 3);
-(8, "Trace", "Bellord", "72-8726834", "tbellord7@meetup.com", 3, 8, 13, 8, 4);
-(9, "Jozef", "Misken", "43-1690085", "jmisken8@home.pl", 1, 9, 13, 9, 1);
-(10, "Leese", "Ferran", "78-3695322", "lferran9@weather.com", 4, 10, 13, 10, 2);
-(11, "Egbert", "McKinnell", "88-7527178", "emckinnella@gizmodo.com", 3, 11, 13, 11, 3);
-(12, "Morlee", "Ryce", "28-7687029", "mryceb@ucoz.com", 3, 12, 13, 12, 4);
-(13, "Clementius", "O""Shavlan", "50-2043123", "coshavlanc@ucoz.com", 3, 13, 13, 1, 13, 1);
-(14, "Karina", "Middiff", "41-5720525", "kmiddiffd@digg.com", 2, 14, 13, 14, 2);
-(15, "Kelci", "Porritt", "71-7288888", "kporritte@indiegogo.com", 2, 15, 13, 15, 3);
-(16, "Maris", "Chittim", "41-1441911", "mchittimf@cnn.com", 2, 16, 13, 16, 4);
-(17, "Sandy", "Mattheeuw", "06-5137487", "smattheeuwg@dyndns.org", 3, 17, 13, 17, 1);
-(18, "Bonnibelle", "Tremblot", "36-7663417", "btrembloth@state.tx.us", 2, 18, 13, 18, 2);
-(19, "Bennie", "Phelan", "22-5223038", "bphelani@accuweather.com", 2, 19, 13, 19, 3);
+(1, "Chadwick", "Brandacci", "82-4336045", "cbrandacci0@is.gd", 3, 1, 13, 1, 1),
+(2, "Jamill", "Aleshintsev", "00-8680047", "jaleshintsev1@epa.gov", 3, 2, 13, 2, 2),
+(3, "Rolando", "Cursons", "44-8986972", "rcursons2@harvard.edu", 3, 3, 13, 3, 3),
+(4, "Kamila", "Manvell", "17-5678386", "kmanvell3@elpais.com", 2, 4, 13, 4, 4),
+(5, "Edgar", "O""Farris", "44-6655474", "eofarris4@tiny.cc", 3, 5, 13, 5, 1),
+(6, "Rochester", "Burkin", "69-6348627", "rburkin5@buzzfeed.com", 3, 6, 13, 6, 2),
+(7, "Merell", "Abbie", "93-8711197", "mabbie6@unc.edu", 1, 7, 13, 7, 3),
+(8, "Trace", "Bellord", "72-8726834", "tbellord7@meetup.com", 3, 8, 13, 8, 4),
+(9, "Jozef", "Misken", "43-1690085", "jmisken8@home.pl", 1, 9, 13, 9, 1),
+(10, "Leese", "Ferran", "78-3695322", "lferran9@weather.com", 4, 10, 13, 10, 2),
+(11, "Egbert", "McKinnell", "88-7527178", "emckinnella@gizmodo.com", 3, 11, 13, 11, 3),
+(12, "Morlee", "Ryce", "28-7687029", "mryceb@ucoz.com", 3, 12, 13, 12, 4),
+(13, "Clementius", "Shavlan", "50-2043123", "coshavlanc@ucoz.com", 3, 13, 1, 13, 1),
+(14, "Karina", "Middiff", "41-5720525", "kmiddiffd@digg.com", 2, 14, 13, 14, 2),
+(15, "Kelci", "Porritt", "71-7288888", "kporritte@indiegogo.com", 2, 15, 13, 15, 3),
+(16, "Maris", "Chittim", "41-1441911", "mchittimf@cnn.com", 2, 16, 13, 16, 4),
+(17, "Sandy", "Mattheeuw", "06-5137487", "smattheeuwg@dyndns.org", 3, 17, 13, 17, 1),
+(18, "Bonnibelle", "Tremblot", "36-7663417", "btrembloth@state.tx.us", 2, 18, 13, 18, 2),
+(19, "Bennie", "Phelan", "22-5223038", "bphelani@accuweather.com", 2, 19, 13, 19, 3),
 (20, "Doe", "Menendez", "88-4917684", "dmenendezj@lulu.com", 2, 20, 13, 20, 4);
 
 
-/* CREATE TABLE movie (
-	id_movie INT NOT NULL AUTO_INCREMENT,
-	title VARCHAR(50) NOT NULL,
-	description VARCHAR(255) NOT NULL,
-    popularity INT NOT NULL DEFAULT 0,
-	director VARCHAR(50) NOT NULL,
-	duration_time TIME NOT NULL,
-    release_date DATE NOT NULL,
-    vote_average INT NOT NULL DEFAULT 0,
-    vote_count INT NOT NULL DEFAULT 0,
-    id_classification_information INT NOT NULL,
-    id_movie_rating INT NOT NULL,
-	id_language INT NOT NULL,
-	id_movie_genre INT NOT NULL,
-    id_format_type INT NOT NULL,
-    id_media_universe INT NOT NULL,
-    id_streaming_platform INT NOT NULL,
-    PRIMARY KEY(id_movie),
-    FOREIGN KEY(id_classification_information) REFERENCES classification_information(id_classification_information),
-    FOREIGN KEY(id_movie_rating) REFERENCES movie_rating(id_movie_rating),
-    FOREIGN KEY(id_language) REFERENCES language(id_language),
-    FOREIGN KEY(id_movie_genre) REFERENCES movie_genre(id_movie_genre),
-    FOREIGN KEY(id_format_type) REFERENCES format_type(id_format_type),
-    FOREIGN KEY(id_media_universe) REFERENCES media_universe(id_media_universe),
-    FOREIGN KEY(id_streaming_platform) REFERENCES streaming_platform(id_streaming_platform)
-); */
-
-INSERT INTO movie (id_movie, title, description, popularity, director, duration_time, release_date, vote_average, vote_count, id_classification_information, id_movie_rating, id_language, id_movie_genre, id_format_type, id_media_universe, id_streaming_platform) VALUES
-
-(1, "Deadpool & Wolverine", "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.", 4467.772, "Marietta Shirer", "02:30:00", "2024-07-24", 7.761, 2452, 1, 5, 71, 4, 1, 3, 3),
-(2, "Inside Out 2", "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.", 2203.934, "Arlen Glanz", "01:30:00", "2024-06-11", 7.7, 3086, 1, 5, 71, 2, 1, 6, 6),
-(3, "Despicable Me 4", "Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.", 1687.022, "Chance Waeland", 02:00:00, "2024-06-20", 7.264, 1286, 1, 3, 71, 5, 2, 4, 6),
-(4, "Twisters", "As storm season intensifies, the paths of former storm chaser Kate Carter and reckless social-media superstar Tyler Owens collide when terrifying phenomena never seen before are unleashed. The pair and their competing teams find themselves squarely in the paths of multiple storm systems converging over central Oklahoma in the fight of their lives.", 1594.068, "Marietta Shirer", "01:30:00", "2024-07-10", 7.023, 1115, 3, 2, 71, 4, 5, 6, 6),
-(5, "Bad Boys: Ride or Die", "After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.", 1469.895, "Marietta Shirer", "02:40:00", "2024-06-05", 7.57, 1735, 1, 2, 71, 4, 1, 2, 6),
-(6, "Gunner", "While on a camping trip in order to reconnect, war veteran Colonel Lee Gunner must save his two sons from a gang of violent bikers when they're kidnapped after accidentally stumbling upon to a massive drug operation.", 1401.788, "Marietta Shirer", "01:50:00", "2024-08-15", 6.311, 427, 2, 4, 71, 4, 3, 13, 6),
-(7, "The Union", "A New Jersey construction worker goes from regular guy to aspiring spy when his long-lost high school sweetheart recruits him for an espionage mission.", 1305.738, "Marietta Shirer", "01:55:00", "2024-08-07", 6.431, 331, 1, 2, 71, 4, 5, 11, 6),
-(8, "It Ends with Us", "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.", 1167.017, "Marietta Shirer", "03:30:00", "2024-08-13", 6.431, 331, 5, 5, 71, 4, 5, 10, 6),
-(9, "Jackpot!", "In the near future, a 'Grand Lottery' has been established - the catch: kill the winner before sundown to legally claim their multi-billion dollar jackpot. When Katie Kim mistakenly finds herself with the winning ticket, she reluctantly joins forces with amateur lottery protection agent Noel Cassidy who must get her to sundown in exchange for a piece of her prize.", 1144.944, "Marietta Shirer", "01:50:00", "2024-05-07", 6.49, 102, 1, 4, 71, 8, 5, 15, 6),
-(10, "Darkness of Man", "Russell Hatch, an Interpol operative who takes on the role of father figure to Jayden, the son of an informant killed in a routine raid gone wrong. Years later, Hatch finds himself protecting Jayden and his grandfather from a group of merciless gangs in an all-out turf war, stopping at nothing to protect Jayden and fight anyone getting in his way.", 1098.629, "Marietta Shirer", "01:30:00", "2024-07-10", 6.556, 462, 3, 3, 71, 4, 5, 14, 1),
-(11, "Longlegs", "FBI Agent Lee Harker is assigned to an unsolved serial killer case that takes an unexpected turn, revealing evidence of the occult. Harker discovers a personal connection to the killer and must stop him before he strikes again.", 1024.117, "Marietta Shirer", "02:45:00", "2024-07-03", 6.8, 103, 1, 5, 3, 4, 5, 6, 6),
-(12, "Kill", "When an army commando finds out his true love is engaged against her will, he boards a New Dehli-bound train in a daring quest to derail the arranged marriage. But when a gang of knife-wielding thieves begin to terrorize innocent passengers on his train, the commando takes them on himself in a death-defying kill-spree to save those around him — turning what should have been a typical commute into an adrenaline-fueled thrill ride.", 1002.352, "Marietta Shirer", "01:30:00", "2024-08-16", 6.19, 29, 1, 5, 71, 4, 5, 6, 3),
-(13, "Crescent City", "When a ruthless serial killer terrorizes a small Southern town, everyone becomes a suspect -- including local authorities. As the body count rises and the dark mystery deepens, the chief detective becomes haunted by the horrors of his past.", 997.712, "Marietta Shirer", "02:30:00", "2024-08-13", 7.21, 678, 2, 4, 3, 4, 5, 1, 5),
-(14, "Alien: Romulus", "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.", 938.313, "Marietta Shirer", "02:20:00", "2024-06-26", 6.853, 1509, 1, 4, 3, 4, 5, 8, 6),
-(15, "A Quiet Place: Day One", "As New York City is invaded by alien creatures who hunt by sound, a woman named Sam fights to survive with her cat.", 809.025, "Marietta Shirer", "02:00:00", "2006-02-14", 4.152, 99, 1, 3, 3, 4, 5, 6, 6),
-(16, "Slaughtered Vomit Dolls", "The gruesome tapestry of psychological manifestations of a nineteen year old bulimic runaway stripper-turned prostitute as she descends into a hellish pit of satanic nightmares and hallucinations.", 776.295, "Marietta Shirer", "01:30:00", "2024-08-01", 6.382, 186, 4, 3, 3, 4, 3, 10, 2),
-(17, "Saving Bikini Bottom: The Sandy Cheeks Movie", "When Bikini Bottom is scooped from the ocean, scientific squirrel Sandy Cheeks and her pal SpongeBob SquarePants saddle up for Texas to save their town.", 772.62, "Marietta Shirer", "02:00:00", "2024-03-15", 6.49, 199, 1, 2, 3, 4, 1, 9, 6),
-(18, "Prey", "A young couple is compelled to leave their Christian missionary station in the Kalahari Desert after being threatened with death by an extremist militant gang. After crashing their aircraft they must battle man and beast for their lives.", 756.032, "Marietta Shirer", "02:30:00", "2024-04-30", 7.2, 841, 5, 1, 62, 4, 1, 10, 6),
-(19, "The Garfield Movie", "Garfield, the world-famous, Monday-hating, lasagna-loving indoor cat, is about to have a wild outdoor adventure! After an unexpected reunion with his long-lost father – scruffy street cat Vic – Garfield and his canine friend Odie are forced from their perfectly pampered life into joining Vic in a hilarious, high-stakes heist.", 4467.772, "Marietta Shirer", "02:30:00", "2024-07-24", 7.761, 2452, 1, 5, 3, 6, 1, 6, 4),
-(20, "Farang", "Sam is a professional boxer about to get released from prison. While on parole, his past catches up with him and he has no choice but to flee. Five years later, he has rebuilt a simple life on an exotic island in Thailand with his wife and her daughter, but when he gets blackmailed by a dangerous local godfather, he must embark on a dangerous drug smuggling mission which results in a tragedy. Now has only one purpose: to seek merciless vengeance.", 79.7, "Marietta Shirer", "02:10:00", "2022-06-28", 6.67, 12, 1, 71, 3, 4, 2, 6, 6);
+-- Insert table: movie
+INSERT INTO movie (id_movie, title, description, popularity, director, duration_time, release_date, vote_average, vote_count, id_classification_information, id_movie_rating, id_language, id_movie_genre, id_format_type, id_media_universe, id_streaming_platform ) VALUES
+(1, "Deadpool & Wolverine", "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.", 4467.772, "Marietta Shirer", "02:30:00", "2024-07-24", 7.761, 2452, 1, 5, 71, 4, 1, 3, 3 ),
+(2, "Inside Out 2", "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.", 2203.934, "Arlen Glanz", "01:30:00", "2024-06-11", 7.7, 3086, 1, 5, 71, 2, 1, 6, 6 ),
+(3, "Despicable Me 4", "Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.", 1687.022, "Chance Waeland", "02:00:00", "2024-06-20", 7.264, 1286, 1, 3, 71, 5, 2, 4, 6 ),
+(4, "Twisters", "As storm season intensifies, the paths of former storm chaser Kate Carter and reckless social-media superstar Tyler Owens collide when terrifying phenomena never seen before are unleashed. The pair and their competing teams find themselves squarely in the paths of multiple storm systems converging over central Oklahoma in the fight of their lives.", 1594.068, "Marietta Shirer", "01:30:00", "2024-07-10", 7.023, 1115, 3, 2, 71, 4, 5, 6, 6 ),
+(5, "Bad Boys: Ride or Die", "After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.", 1469.895, "Marietta Shirer", "02:40:00", "2024-06-05", 7.57, 1735, 1, 2, 71, 4, 1, 2, 6 ),
+(6, "Gunner", "While on a camping trip in order to reconnect, war veteran Colonel Lee Gunner must save his two sons from a gang of violent bikers when they're kidnapped after accidentally stumbling upon to a massive drug operation.", 1401.788, "Marietta Shirer", "01:50:00", "2024-08-15", 6.311, 427, 2, 4, 71, 4, 3, 13, 6 ),
+(7, "The Union", "A New Jersey construction worker goes from regular guy to aspiring spy when his long-lost high school sweetheart recruits him for an espionage mission.", 1305.738, "Marietta Shirer", "01:55:00", "2024-08-07", 6.431, 331, 1, 2, 71, 4, 5, 11, 6 ),
+(8, "It Ends with Us", "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.", 1167.017, "Marietta Shirer", "03:30:00", "2024-08-13", 6.431, 331, 5, 5, 71, 4, 5, 10, 6 ),
+(9, "Jackpot!", "In the near future, a 'Grand Lottery' has been established - the catch: kill the winner before sundown to legally claim their multi-billion dollar jackpot. When Katie Kim mistakenly finds herself with the winning ticket, she reluctantly joins forces with amateur lottery protection agent Noel Cassidy who must get her to sundown in exchange for a piece of her prize.", 1144.944, "Marietta Shirer", "01:50:00", "2024-05-07", 6.49, 102, 1, 4, 71, 8, 5, 15, 6 ),
+(10, "Darkness of Man", "Russell Hatch, an Interpol operative who takes on the role of father figure to Jayden, the son of an informant killed in a routine raid gone wrong. Years later, Hatch finds himself protecting Jayden and his grandfather from a group of merciless gangs in an all-out turf war, stopping at nothing to protect Jayden and fight anyone getting in his way.", 1098.629, "Marietta Shirer", "01:30:00", "2024-07-10", 6.556, 462, 3, 3, 71, 4, 5, 14, 1 ),
+(11, "Longlegs", "FBI Agent Lee Harker is assigned to an unsolved serial killer case that takes an unexpected turn, revealing evidence of the occult. Harker discovers a personal connection to the killer and must stop him before he strikes again.", 1024.117, "Marietta Shirer", "02:45:00", "2024-07-03", 6.8, 103, 1, 5, 3, 4, 5, 6, 6 ),
+(12, "Kill", "When an army commando finds out his true love is engaged against her will, he boards a New Dehli-bound train in a daring quest to derail the arranged marriage. But when a gang of knife-wielding thieves begin to terrorize innocent passengers on his train, the commando takes them on himself in a death-defying kill-spree to save those around him — turning what should have been a typical commute into an adrenaline-fueled thrill ride.", 1002.352, "Marietta Shirer", "01:30:00", "2024-08-16", 6.19, 29, 1, 5, 71, 4, 5, 6, 3 ),
+(13, "Crescent City", "When a ruthless serial killer terrorizes a small Southern town, everyone becomes a suspect -- including local authorities. As the body count rises and the dark mystery deepens, the chief detective becomes haunted by the horrors of his past.", 997.712, "Marietta Shirer", "02:30:00", "2024-08-13", 7.21, 678, 2, 4, 3, 4, 5, 1, 5 ),
+(14, "Alien: Romulus", "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.", 938.313, "Marietta Shirer", "02:20:00", "2024-06-26", 6.853, 1509, 1, 4, 3, 4, 5, 8, 6 ),
+(15, "A Quiet Place: Day One", "As New York City is invaded by alien creatures who hunt by sound, a woman named Sam fights to survive with her cat.", 809.025, "Marietta Shirer", "02:00:00", "2006-02-14", 4.152, 99, 1, 3, 3, 4, 5, 6, 6 ),
+(16, "Slaughtered Vomit Dolls", "The gruesome tapestry of psychological manifestations of a nineteen year old bulimic runaway stripper-turned prostitute as she descends into a hellish pit of satanic nightmares and hallucinations.", 776.295, "Marietta Shirer", "01:30:00", "2024-08-01", 6.382, 186, 4, 3, 3, 4, 3, 10, 2 ),
+(17, "Saving Bikini Bottom: The Sandy Cheeks Movie", "When Bikini Bottom is scooped from the ocean, scientific squirrel Sandy Cheeks and her pal SpongeBob SquarePants saddle up for Texas to save their town.", 772.62, "Marietta Shirer", "02:00:00", "2024-03-15", 6.49, 199, 1, 2, 3, 4, 1, 9, 6 ),
+(18, "Prey", "A young couple is compelled to leave their Christian missionary station in the Kalahari Desert after being threatened with death by an extremist militant gang. After crashing their aircraft they must battle man and beast for their lives.", 756.032, "Marietta Shirer", "02:30:00", "2024-04-30", 7.2, 841, 5, 1, 62, 4, 1, 10, 6 ),
+(19, "The Garfield Movie", "Garfield, the world-famous, Monday-hating, lasagna-loving indoor cat, is about to have a wild outdoor adventure! After an unexpected reunion with his long-lost father – scruffy street cat Vic – Garfield and his canine friend Odie are forced from their perfectly pampered life into joining Vic in a hilarious, high-stakes heist.", 4467.772, "Marietta Shirer", "02:30:00", "2024-07-24", 7.761, 2452, 1, 5, 3, 6, 1, 6, 4 ),
+(20, "Farang", "Sam is a professional boxer about to get released from prison. While on parole, his past catches up with him and he has no choice but to flee. Five years later, he has rebuilt a simple life on an exotic island in Thailand with his wife and her daughter, but when he gets blackmailed by a dangerous local godfather, he must embark on a dangerous drug smuggling mission which results in a tragedy. Now has only one purpose: to seek merciless vengeance.", 79.7, "Marietta Shirer", "02:10:00", "2022-06-28", 6.67, 12, 1, 3, 3, 4, 2, 6, 6);
 
 
+-- Insert table: commentary
+INSERT INTO commentary (id_commentary, id_movie, id_user, commentary, commentary_date) VALUES
+(1, 1, 1, "Increíble película, realmente te hace pensar.", "2024-08-31"),
+(2, 2, 2, "Una de las mejores películas de ciencia ficción que he visto.", "2024-08-31"),
+(3, 3, 3, "Una obra maestra. Las actuaciones y la historia son excepcionales.", "2024-08-31"),
+(4, 4, 4, "Un clásico que nunca pasa de moda.", "2024-08-31"),
+(5, 5, 5, "Un clásico atemporal. La dirección y la narrativa son impecables.", "2024-08-31"),
+(6, 6, 6, "Una historia fascinante sobre el poder y la familia.", "2024-08-31"),
+(7, 7, 7, "El mejor superhéroe de todos los tiempos. Las actuaciones son geniales.", "2024-08-31"),
+(8, 8, 8, "Un thriller impresionante con grandes actuaciones.", "2024-08-31"),
+(9, 9, 9, "Un guion brillante y una dirección excepcional. Tarantino en su mejor momento.", "2024-08-31"),
+(10, 10, 10, "La trama no es lineal, pero es fascinante.", "2024-08-31"),
+(11, 11, 11, "Una película que redefine el género de ciencia ficción. Muy recomendable.", "2024-08-31"),
+(12, 12, 12, "Una historia innovadora con un mundo fascinante.", "2024-08-31"),
+(13, 13, 13, "Una historia conmovedora con una actuación excepcional de Tom Hanks.", "2024-09-01"),
+(14, 14, 14, "Un viaje emocional que te hace apreciar la vida.", "2024-09-01"),
+(15, 15, 15, "Una épica romana con una gran historia y una excelente dirección.", "2024-09-01"),
+(16, 16, 16, "Un clásico que no te puedes perder.", "2024-09-01"),
+(17, 17, 17, "Me encantó el final. Muy creativo.", "2024-09-01"),
+(18, 18, 18, "El concepto es fascinante, pero algo confuso.", "2024-09-01"),
+(19, 19, 19, "El guion es impresionante.", "2024-09-01"),
+(20, 20, 20, "Las actuaciones son sobresalientes.", "2024-09-01");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-- SELECT * FROM TABLES
+SELECT * FROM classification_information;
+SELECT * FROM commentary;
+SELECT * FROM country;
+SELECT * FROM customer;
+SELECT * FROM format_type;
+SELECT * FROM gender_user;
+SELECT * FROM language;
+SELECT * FROM media_universe;
+SELECT * FROM movie;
+SELECT * FROM movie_favorite_list;
+SELECT * FROM movie_genre;
+SELECT * FROM movie_rating;
+SELECT * FROM profile;
+SELECT * FROM province;
+SELECT * FROM restriction_profile;
+SELECT * FROM streaming_platform;
+SELECT * FROM subscription;
+SELECT * FROM type_of_plan;
+SELECT * FROM user;
