@@ -166,7 +166,6 @@ CREATE TABLE movie (
     id_format_type INT NOT NULL,
     id_media_universe INT NOT NULL,
     id_streaming_platform INT NOT NULL,
-    id_commentary INT,
     PRIMARY KEY(id_movie),
     FOREIGN KEY(id_classification_information) REFERENCES classification_information(id_classification_information),
     FOREIGN KEY(id_movie_rating) REFERENCES movie_rating(id_movie_rating),
