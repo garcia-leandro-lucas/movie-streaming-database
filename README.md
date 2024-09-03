@@ -19,4 +19,4 @@ La intensión de la propuesta es realizar la creación de una base de datos para
 <br />
 <img src="/sql/image/draw-io.svg" alt="Pochoclos" style="width: 30px;"/>
 
-[**Diagrama Entidad relación:** goMovieStreaming](https://drive.google.com/file/d/1MVALFm6XlAPI1ewXhRKhnIOm2nCJj996/view?usp=sharing)
+[**Diagrama Entidad relación:** goMovieStreaming](https://drive.google.com/file/d/1dyH2eZ4jLdbfl1EI9wHiCd_GPoketLBF/view?usp=sharing)
