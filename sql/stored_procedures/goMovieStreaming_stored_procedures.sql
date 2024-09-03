@@ -2,7 +2,7 @@ USE goMovieStreaming;
 
 -- 1 Stored Procedures
 -- Este stored procedures muestra en una tabla las primeras 3 peliculas más populares de forma descendente.
-DROP PROCEDURE IF EXISTS list_of_movies_according_to_popularity;
+-- DROP PROCEDURE IF EXISTS list_of_movies_according_to_popularity;
 DELIMITER $$
 CREATE PROCEDURE list_of_movies_according_to_popularity()
 	BEGIN
@@ -16,7 +16,7 @@ CALL list_of_movies_according_to_popularity();
 
 -- 2 Stored Procedures
 -- Este stored procedures muestra en una tabla las peores peliculas por debajo de 3 estrellas con un limite de las 5 primeras que aparezcan.
-DROP PROCEDURE IF EXISTS list_of_movies_with_the_lowest_rating;
+-- DROP PROCEDURE IF EXISTS list_of_movies_with_the_lowest_rating;
 DELIMITER $$
 CREATE PROCEDURE list_of_movies_with_the_lowest_rating()
 	BEGIN

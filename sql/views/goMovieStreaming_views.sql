@@ -1,12 +1,14 @@
 USE goMovieStreaming;
 
 -- 1 view
+-- Esta vista muestra la información principal de una lista de peliculas.
 CREATE OR REPLACE VIEW view_list_of_movies AS
 (SELECT title, description, popularity, release_date FROM movie);
 
 SELECT * FROM view_list_of_movies;
 
 -- 2 view
+-- Esta vista muestra un top 10 de las peliculas mas populares y en que plataforma se visualiza.
 CREATE OR REPLACE VIEW view_top_10_most_popular_movies AS
 (SELECT M.title, M.popularity, SP.streaming_platform_name
 FROM movie M
@@ -16,6 +18,7 @@ ON M.id_streaming_platform = SP.id_streaming_platform) ORDER BY popularity DESC 
 SELECT * FROM view_top_10_most_popular_movies;
 
 -- 3 view
+-- Esta vista muestra las peliculas con mas altas clasificaciones de raiting.
 CREATE OR REPLACE VIEW view_list_of_movies_with_the_highest_rating AS
 (SELECT M.title, SP.streaming_platform_name, R.name_movie_rating
 FROM movie M
@@ -27,6 +30,7 @@ ON M.id_movie_rating = R.id_movie_rating);
 SELECT * FROM view_list_of_movies_with_the_highest_rating;
 
 -- 4 view
+-- Esta vista muestra las nacionalidades de los clientes registrados.
 CREATE OR REPLACE VIEW view_list_of_customer_nationalities AS
 SELECT CUS.first_name, CUS.last_name, COU.country_name, PRO.province_name
 FROM customer CUS
