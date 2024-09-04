@@ -1,7 +1,7 @@
 
 -- 1 Triggers
 -- Este triggers chequea el valor insertado del rating de una pelicula.
-DROP TRIGGER IF EXISTS trigger_check_rating_insert_value;
+-- DROP TRIGGER IF EXISTS trigger_check_rating_insert_value;
 DELIMITER $$
 CREATE TRIGGER trigger_check_rating_insert_value
 BEFORE INSERT ON movie
@@ -17,7 +17,7 @@ BEFORE INSERT ON movie
 
 -- 2 Triggers
 -- Este triggers chequea el valor actualizado del voto promedio de una pelicula.
-DROP TRIGGER IF EXISTS trigger_check_vote_average_update_value;
+-- DROP TRIGGER IF EXISTS trigger_check_vote_average_update_value;
 DELIMITER $$
 CREATE TRIGGER trigger_check_vote_average_update_value
 BEFORE UPDATE ON movie
