@@ -14,6 +14,10 @@ BEFORE INSERT ON movie
 			END IF;
 		END $$
 
+-- Querie para hacer la prueba: Valor cambiante es "id_movie_rating"
+/* INSERT INTO movie (id_movie, title, description, popularity, director, duration_time, release_date, vote_average, vote_count, id_classification_information, id_movie_rating, id_language, id_movie_genre, id_format_type, id_media_universe, id_streaming_platform ) VALUES
+(32, "Farang", "Merciless vengeance.", 79.7, "Marietta Shirer", "02:10:00", "2022-06-28", 6.67, 12, 1, 10, 3, 4, 2, 6, 6); */
+
 
 -- 2 Triggers
 -- Este triggers chequea el valor actualizado del voto promedio de una pelicula.
@@ -30,8 +34,5 @@ BEFORE UPDATE ON movie
 			END IF;
 		END $$
 
-
-/* INSERT INTO movie (id_movie, title, description, popularity, director, duration_time, release_date, vote_average, vote_count, id_classification_information, id_movie_rating, id_language, id_movie_genre, id_format_type, id_media_universe, id_streaming_platform ) VALUES
-(32, "Farang", "Merciless vengeance.", 79.7, "Marietta Shirer", "02:10:00", "2022-06-28", 6.67, 12, 1, 10, 3, 4, 2, 6, 6); */
-        
+-- Querie para hacer la prueba: Valor cambiante es "vote_average"
 /* UPDATE movie SET vote_average = 11 WHERE id_movie = 1; */

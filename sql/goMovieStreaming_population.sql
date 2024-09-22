@@ -510,20 +510,20 @@ INSERT INTO province (id_province, province_name, id_country) VALUES
 (38,"Ciudad de la Costa",229);
 
 
--- Insert table: type_of_plan
-INSERT INTO type_of_plan (id_type_of_plan, type_of_plan_name) VALUES
-(1, "Free"),
-(2, "Essential"),
-(3, "Standard"),
-(4, "Premium");
-
-
 -- Insert table: subscription
-INSERT INTO subscription (id_subscription, id_type_of_plan) VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4);
+INSERT INTO subscription (id_subscription, type_of_plan_description, ISO_of_plan_description, type_of_plan_cost_value) VALUES
+(1, "Free daily", "F-01", 0.0),
+(2, "Free monthy", "F-30", 0.0),
+(3, "Free annual", "F-365", 0.0),
+(4, "Essential daily", "E-01",0.2),
+(5, "Essential monthy", "E-30", 7),
+(6, "Essential annual", "E-365", 60),
+(7, "Standard daily", "S-01", 0.3),
+(8, "Standard monthy", "S-30", 8),
+(9, "Standard annual", "S-365", 65),
+(10, "Premium daily", "P-01", 0.35),
+(11, "Premium monthy", "P-30", 8.5),
+(12, "Premium annual", "P-365", 70);
 
 
 -- Insert table: profile
@@ -580,22 +580,22 @@ INSERT INTO customer (id_customer, first_name, last_name, dni, email, id_gender_
 (2, "Jamill", "Aleshintsev", "00-8680047", "jaleshintsev1@epa.gov", 3, 2, 13, 2, 2),
 (3, "Rolando", "Cursons", "44-8986972", "rcursons2@harvard.edu", 3, 3, 13, 3, 3),
 (4, "Kamila", "Manvell", "17-5678386", "kmanvell3@elpais.com", 2, 4, 13, 4, 4),
-(5, "Edgar", "Farris", "44-6655474", "eofarris4@tiny.cc", 3, 5, 13, 5, 1),
-(6, "Rochester", "Burkin", "69-6348627", "rburkin5@buzzfeed.com", 3, 6, 13, 6, 2),
+(5, "Edgar", "Farris", "44-6655474", "eofarris4@tiny.cc", 3, 5, 13, 5, 12),
+(6, "Rochester", "Burkin", "69-6348627", "rburkin5@buzzfeed.com", 3, 6, 13, 6, 10),
 (7, "Merell", "Abbie", "93-8711197", "mabbie6@unc.edu", 1, 7, 13, 7, 3),
 (8, "Trace", "Bellord", "72-8726834", "tbellord7@meetup.com", 3, 8, 13, 8, 4),
 (9, "Jozef", "Misken", "43-1690085", "jmisken8@home.pl", 1, 9, 13, 9, 1),
 (10, "Leese", "Ferran", "78-3695322", "lferran9@weather.com", 4, 10, 13, 10, 2),
-(11, "Egbert", "McKinnell", "88-7527178", "emckinnella@gizmodo.com", 3, 11, 13, 11, 3),
+(11, "Egbert", "McKinnell", "88-7527178", "emckinnella@gizmodo.com", 3, 11, 13, 11, 12),
 (12, "Morlee", "Ryce", "28-7687029", "mryceb@ucoz.com", 3, 12, 13, 12, 4),
 (13, "Clementius", "Shavlan", "50-2043123", "coshavlanc@ucoz.com", 3, 14, 31, 13, 1),
 (14, "Karina", "Middiff", "41-5720525", "kmiddiffd@digg.com", 2, 14, 13, 14, 2),
-(15, "Kelci", "Porritt", "71-7288888", "kporritte@indiegogo.com", 2, 15, 13, 15, 3),
-(16, "Maris", "Chittim", "41-1441911", "mchittimf@cnn.com", 2, 16, 13, 16, 4),
-(17, "Sandy", "Mattheeuw", "06-5137487", "smattheeuwg@dyndns.org", 3, 17, 13, 17, 1),
-(18, "Bonnibelle", "Tremblot", "36-7663417", "btrembloth@state.tx.us", 2, 18, 13, 18, 2),
-(19, "Bennie", "Phelan", "22-5223038", "bphelani@accuweather.com", 2, 19, 13, 19, 3),
-(20, "Doe", "Menendez", "88-4917684", "dmenendezj@lulu.com", 2, 20, 13, 20, 4);
+(15, "Kelci", "Porritt", "71-7288888", "kporritte@indiegogo.com", 2, 15, 13, 15, 9),
+(16, "Maris", "Chittim", "41-1441911", "mchittimf@cnn.com", 2, 16, 13, 16, 11),
+(17, "Sandy", "Mattheeuw", "06-5137487", "smattheeuwg@dyndns.org", 3, 17, 13, 17, 11),
+(18, "Bonnibelle", "Tremblot", "36-7663417", "btrembloth@state.tx.us", 2, 18, 13, 18, 7),
+(19, "Bennie", "Phelan", "22-5223038", "bphelani@accuweather.com", 2, 19, 13, 19, 12),
+(20, "Doe", "Menendez", "88-4917684", "dmenendezj@lulu.com", 2, 20, 13, 20, 5);
 
 
 -- Insert table: movie
@@ -664,5 +664,4 @@ SELECT * FROM province;
 SELECT * FROM restriction_profile;
 SELECT * FROM streaming_platform;
 SELECT * FROM subscription;
-SELECT * FROM type_of_plan;
 SELECT * FROM user;

@@ -93,19 +93,13 @@ CREATE TABLE province (
     FOREIGN KEY (id_country) REFERENCES country(id_country)
 );
 
--- Table: type_of_plan
-CREATE TABLE type_of_plan (
-	id_type_of_plan INT NOT NULL AUTO_INCREMENT,
-	type_of_plan_name VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id_type_of_plan)
-);
-
 -- Table: subscription
 CREATE TABLE subscription (
 	id_subscription INT NOT NULL AUTO_INCREMENT,
-	id_type_of_plan INT NOT NULL,
-    PRIMARY KEY(id_subscription),
-    FOREIGN KEY (id_type_of_plan) REFERENCES type_of_plan(id_type_of_plan)
+	type_of_plan_description VARCHAR(255) NOT NULL,
+    ISO_of_plan_description VARCHAR(10) NOT NULL,
+    type_of_plan_cost_value FLOAT NOT NULL,
+    PRIMARY KEY(id_subscription)
 );
 
 -- Table: profile
